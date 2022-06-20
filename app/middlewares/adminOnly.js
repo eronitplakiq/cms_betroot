@@ -6,7 +6,10 @@ module.exports = (req, res, next) => {
             next();
         }else{
             res.status(403).json({
-                errors: { global: 'You are unauthorized for this action'}
+                errors: { 
+                    global: 'You are unauthorized for this action',
+                    error: err
+                }
             })
         }
     }).catch(error => {
